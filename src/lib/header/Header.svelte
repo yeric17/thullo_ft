@@ -1,6 +1,6 @@
 <script lang="ts">
 import Avatar from "$lib/avatar/Avatar.svelte";
-import Logo from "./logo.svelte";
+import Logo from "$lib/header/logo.svelte";
 
 </script>
 <header class="shadow-1">
@@ -18,6 +18,7 @@ import Logo from "./logo.svelte";
 		display: flex;
 		justify-content: space-between;
 		padding-inline: 1.5rem;
-		padding-block: 1rem;
+		position: relative;
+		z-index: 4;
 	}
 </style>

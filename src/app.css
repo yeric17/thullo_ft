@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Poppins:wght@500&display=swap');
+
+:root{
+	--fs-xl: 1.5rem;
+	--fs-lg: 1.25rem;
+	--fs-md: 1rem;
+	--fs-sm: .75rem;
+	--fs-xs: .5rem;
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -6,6 +16,16 @@
 
 body{
 	font-size: 16px;
+	font-family: 'Poppins', 'Noto Sans', sans-serif;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+li {
+	list-style: none;
 }
 
 .shadow-1 {
@@ -26,4 +46,21 @@ box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
 .shadow-5 {
 box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.btn{
+	cursor: pointer;
+	background-color: transparent;
+	outline: none;
+	border: none;
+}
+.btn-icon{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-icon:hover{
+	background-color: #f0f0f0;
+	border-radius: 4px;
 }
