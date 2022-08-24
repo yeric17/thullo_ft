@@ -4,7 +4,7 @@ import { page } from "$app/stores";
 import ButtonIcon from "$lib/ButtonIcon.svelte";
 import LogoutIcon from "$lib/icons/LogoutIcon.svelte";
 
-    let showMenu:boolean = false;
+    let showMenu:boolean = true;
     function toggleMenu(){
         showMenu = !showMenu;
     }    
@@ -24,7 +24,7 @@ import LogoutIcon from "$lib/icons/LogoutIcon.svelte";
                 <li><a href="/profile" class:active={$page.url.pathname === '/profile'}>My Profile</a></li>
                 <li><a href="/boards" class:active={$page.url.pathname === '/boards'}>Boards</a></li>
                 <li>
-                    <ButtonIcon color="#EB5757">
+                    <ButtonIcon color="#EB5757" type="secondary">
                         <span slot="icon"><LogoutIcon/></span>
                         <span slot="label">Logout</span>
                     </ButtonIcon>
@@ -52,6 +52,7 @@ import LogoutIcon from "$lib/icons/LogoutIcon.svelte";
         font-family: 'Noto Sans';
         font-weight: 500;
         color: #4F4F4F;
+        background-color: #FFFFFF;
     }
     a{
         display: flex;

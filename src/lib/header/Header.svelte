@@ -23,6 +23,6 @@ import Logo from "$lib/header/LogoThullo.svelte";
 		align-items: center;
 		gap: 14px;
 		position: relative;
-		z-index: 4;
+		z-index: 10;
 	}
 </style>

@@ -1,9 +1,10 @@
 <script lang="ts">
     export let color:string = "#828282"
+    export let type:string = "primary"
 </script>
 
 
-<button class="btn" style="--color: {color}">
+<button class="btn" style="--color: {color}" class:primary={type==='primary'}>
     <slot name="icon"></slot>
     <slot name="label"></slot>
 </button>
@@ -21,6 +22,8 @@
     }
     .btn:hover{
         background-color: #F2F2F2;
-        
+    }
+    .btn.primary {
+        background-color: var(--color-accent);
     }
 </style>
