@@ -9,7 +9,6 @@ import Menu from "./Menu.svelte";
 <span class="avatar">
     <img  class="avatar_image" src="{avatar_url}" alt="avatar">
     <span class="avatar_name">{name}</span>
-    <Menu></Menu>
 </span>
 
 <style>
@@ -17,6 +16,7 @@ import Menu from "./Menu.svelte";
         display: flex;
         align-items: center;
         gap: 11px;
+        justify-self: end;
     }
     .avatar_image{
         border-radius: 8px;

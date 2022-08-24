@@ -1,6 +1,10 @@
 
 <script lang="ts">
-    let showMenu:boolean = true;
+import { page } from "$app/stores";
+import ButtonIcon from "$lib/ButtonIcon.svelte";
+import LogoutIcon from "$lib/icons/LogoutIcon.svelte";
+
+    let showMenu:boolean = false;
     function toggleMenu(){
         showMenu = !showMenu;
     }    
@@ -16,9 +20,15 @@
     {#if showMenu}
         <article class="profile-menu_content shadow-2">
             <ul>
-                <li><a href="/profile">My Profile</a></li>
-                <li><a href="/profile">Boards</a></li>
-                <li><button href="/profile"> Logout</button></li>
+                
+                <li><a href="/profile" class:active={$page.url.pathname === '/profile'}>My Profile</a></li>
+                <li><a href="/boards" class:active={$page.url.pathname === '/boards'}>Boards</a></li>
+                <li>
+                    <ButtonIcon color="#EB5757">
+                        <span slot="icon"><LogoutIcon/></span>
+                        <span slot="label">Logout</span>
+                    </ButtonIcon>
+                </li>
             </ul>
         </article>
     {/if}
@@ -44,10 +54,18 @@
         color: #4F4F4F;
     }
     a{
-        display: block;
+        display: flex;
         border-radius: 8px;
+        align-items: center;
+        height: 40px;
         padding: .75rem;
         margin-bottom: 4px;
+    }
+    li a.active{
+        background-color: #F2F2F2;
+    }
+    li:last-child{
+        border-top: 1px solid #F2F2F2;
     }
     .btn-icon svg{
         transition: all .3s;
