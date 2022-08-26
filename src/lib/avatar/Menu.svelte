@@ -4,7 +4,7 @@ import { page } from "$app/stores";
 import ButtonIcon from "$lib/ButtonIcon.svelte";
 import LogoutIcon from "$lib/icons/LogoutIcon.svelte";
 
-    let showMenu:boolean = true;
+    let showMenu:boolean = false;
     function toggleMenu(){
         showMenu = !showMenu;
     }    
@@ -21,8 +21,8 @@ import LogoutIcon from "$lib/icons/LogoutIcon.svelte";
         <article class="profile-menu_content shadow-2">
             <ul>
                 
-                <li><a href="/profile" class:active={$page.url.pathname === '/profile'}>My Profile</a></li>
-                <li><a href="/boards" class:active={$page.url.pathname === '/boards'}>Boards</a></li>
+                <li><a on:click={toggleMenu} href="/profile" class:active={$page.url.pathname === '/profile'}>My Profile</a></li>
+                <li><a on:click={toggleMenu} href="/boards" class:active={$page.url.pathname === '/boards'}>Boards</a></li>
                 <li>
                     <ButtonIcon color="#EB5757" type="secondary">
                         <span slot="icon"><LogoutIcon/></span>

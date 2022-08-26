@@ -20,6 +20,7 @@
 body{
 	font-size: 16px;
 	font-family: 'Poppins', 'Noto Sans', sans-serif;
+	background-color: #F8F9FD;
 }
 
 a{
@@ -56,6 +57,7 @@ box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 	background-color: transparent;
 	outline: none;
 	border: none;
+	height: 30px;
 }
 .btn:hover{
 	opacity: .8;

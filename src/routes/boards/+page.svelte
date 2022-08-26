@@ -1,9 +1,12 @@
 
 <script lang="ts">
     import BoardCard from "$lib/board/BoardCard.svelte";
-import ButtonIcon from "$lib/ButtonIcon.svelte";
+    import ModalAddBoard from "$lib/board/ModalAddBoard.svelte";
+    import ButtonIcon from "$lib/ButtonIcon.svelte";
     import { boards } from "$lib/stores/boards";
     
+
+    let showAddBoard:boolean = false;
 </script>
 
 
@@ -11,7 +14,7 @@ import ButtonIcon from "$lib/ButtonIcon.svelte";
     <header class="boards_header">
         <h2>All Boards</h2>
         <div class="button_inner">
-            <ButtonIcon color="#FFFFFF">
+            <ButtonIcon color="#FFFFFF" on:click={()=> showAddBoard = true}>
                 <span slot="label">Add</span>
                 <span slot="icon">
                     <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -30,6 +33,7 @@ import ButtonIcon from "$lib/ButtonIcon.svelte";
             {/each}
         </div>
     </main>
+    <ModalAddBoard bind:showModal={showAddBoard}/>
 </section>
 
 <style>

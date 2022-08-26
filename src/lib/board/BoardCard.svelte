@@ -9,7 +9,7 @@
 
 <article class="board-card shadow-2">
     <div class="board-card_banner">
-        <img class="banner_image" src="{board.image}" alt="banner_image">
+        <a href="/boards/{board.id}"><img class="banner_image" src="{board.image}" alt="banner_image"></a>
     </div>
     <h3 class="board-card_title">{board.name}</h3>
     <footer class="board-card_members">
@@ -31,6 +31,7 @@
         display: grid;
         grid-template-rows: 154px auto auto;
         border-radius: 12px;
+        background-color: #ffffff;
     }
     .board-card_banner{
         padding: .75rem;

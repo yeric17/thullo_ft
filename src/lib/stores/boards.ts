@@ -3,6 +3,7 @@ import { writable } from "svelte/store";
 
 let initBoards:Board[] = [
     {
+        id:"1",
         name: "Devchallenges Board",
         image: "https://picsum.photos/seed/picsum/200/300",
         members: [
@@ -10,9 +11,10 @@ let initBoards:Board[] = [
                 name: "Yeric",
                 avatar_url: "https://i.pravatar.cc/150?img=3"
             }
-        ]
+        ],
     },
     {
+        id:"2",
         name: "Simple Project",
         image: "https://picsum.photos/seed/picsum/200/300",
         members: [
@@ -27,6 +29,7 @@ let initBoards:Board[] = [
         ]
     },
     {
+        id:"3",
         name: "Devchallenges Board",
         image: "https://picsum.photos/seed/picsum/200/300",
         members: [
@@ -37,6 +40,7 @@ let initBoards:Board[] = [
         ]
     },
     {
+        id:"4",
         name: "Simple Project",
         image: "https://picsum.photos/seed/picsum/200/300",
         members: [
@@ -67,6 +71,7 @@ let initBoards:Board[] = [
         ]
     },
     {
+        id:"5",
         name: "Devchallenges Board",
         image: "https://picsum.photos/seed/picsum/200/300",
         members: [
@@ -77,6 +82,7 @@ let initBoards:Board[] = [
         ]
     },
     {
+        id:"6",
         name: "Simple Project",
         image: "https://picsum.photos/seed/picsum/200/300",
         members: [
@@ -117,3 +123,13 @@ let initBoards:Board[] = [
 ]
 
 export const boards = writable(initBoards)
+
+
+export const getBoardById = function(boardId:string):Board|undefined {
+    let board:Board|undefined = undefined
+    boards.update(value => {
+        board =  value.find(b => b.id === boardId)
+        return value
+    })
+    return board
+}
