@@ -15,7 +15,9 @@ import Logo from "$lib/header/LogoThullo.svelte";
 </header>
 
 <style>
-
+	header{
+		margin-bottom: 2.25rem;
+	}
 	.header_inner{
 		display: grid;
 		grid-template-columns: auto 1fr auto;

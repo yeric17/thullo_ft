@@ -24,7 +24,7 @@ import LogoutIcon from "$lib/icons/LogoutIcon.svelte";
                 <li><a on:click={toggleMenu} href="/profile" class:active={$page.url.pathname === '/profile'}>My Profile</a></li>
                 <li><a on:click={toggleMenu} href="/boards" class:active={$page.url.pathname === '/boards'}>Boards</a></li>
                 <li>
-                    <ButtonIcon color="#EB5757" type="secondary">
+                    <ButtonIcon color="#EB5757" theme="secondary">
                         <span slot="icon"><LogoutIcon/></span>
                         <span slot="label">Logout</span>
                     </ButtonIcon>

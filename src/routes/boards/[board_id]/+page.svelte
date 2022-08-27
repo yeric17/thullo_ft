@@ -3,9 +3,12 @@
 
 <script lang="ts">
     import Avatar from "$lib/avatar/Avatar.svelte";
-import ButtonIcon from "$lib/ButtonIcon.svelte";
+import MemberList from "$lib/board/MemberList.svelte";
+    import ButtonIcon from "$lib/ButtonIcon.svelte";
 
     import Checkbox from "$lib/Checkbox.svelte";
+import LockIcon from "$lib/icons/LockIcon.svelte";
+import MenuDotIcon from "$lib/icons/MenuDotIcon.svelte";
     
     export let data:any;
 
@@ -17,27 +20,44 @@ import ButtonIcon from "$lib/ButtonIcon.svelte";
 </svelte:head>
 <main class="board">
     <header class="board_header">
-        <div>
+        <div class="board_checkbox">
             <Checkbox>
                 <span slot="icon">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" />
-                    </svg>
+                    <LockIcon/>
                 </span>
                 Private
             </Checkbox>
         </div>
         <div class="board_members">
-            {#if board && board.members}
-                {#each  board.members as member}
-                    <Avatar avatar_url={member.avatar_url}/>
-                {/each}
-            {/if}
+            <MemberList members={board.members}/>
         </div>
-        <ButtonIcon type="secondary">
-            <span slot="label" >Show Menu</span>
-        </ButtonIcon>
+        <div class="board_button">
+            <ButtonIcon theme="tertiary">
+                <span slot="icon">
+                    <MenuDotIcon/>
+                </span>
+                <span slot="label" >Show Menu</span>
+            </ButtonIcon>
+        </div>
     </header>
     <div class="board_lists">
     </div>
 </main>
+
+<style>
+    .board_header{
+        display: grid;
+        grid-template-columns: auto repeat(2, 1fr);
+        padding-inline: 1rem;
+        gap: 1rem;
+    }
+    .board_members{
+        display: flex;
+    }
+    .board_checkbox{
+        width: 98px;
+    }
+    .board_button{
+        justify-self: end;
+    }
+</style>

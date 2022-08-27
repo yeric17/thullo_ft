@@ -39,7 +39,7 @@
             </div>
             <footer class="add-board_footer">
                 <div class="add-board_button">
-                    <ButtonIcon color="#828282" type="secondary" on:click={toggleModal}>
+                    <ButtonIcon color="#828282" theme="secondary" on:click={toggleModal}>
                         <span slot="label">Cancel</span>
                     </ButtonIcon>
                 </div>

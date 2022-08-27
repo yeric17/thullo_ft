@@ -8,11 +8,11 @@
         dispacher("click",event)
     }
     export let color:string = "#828282"
-    export let type:string = "primary"
+    export let theme:string = "primary"
 </script>
 
 
-<button class="btn" style="--color: {color}" class:primary={type==='primary'} on:click={onClick}>
+<button class="btn" style="--color: {color}" class:primary={theme==='primary'} class:tertiary={theme === 'tertiary'} on:click={onClick}>
     <slot name="icon"></slot>
     <slot name="label"></slot>
 </button>
@@ -34,5 +34,8 @@
     }
     .btn.primary {
         background-color: var(--color-accent);
+    }
+    .btn.tertiary {
+        background-color: #f2f2f2;
     }
 </style>

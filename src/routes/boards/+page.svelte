@@ -37,9 +37,7 @@
 </section>
 
 <style>
-    .boards{
-        padding-top: 4rem;
-    }
+
     .boards_inner {
         display: grid;
         width: 100%;
