@@ -9,7 +9,8 @@ let initBoards:Board[] = [
         members: [
             {
                 name: "Yeric",
-                avatar_url: "https://i.pravatar.cc/150?img=3"
+                avatar_url: "https://i.pravatar.cc/150?img=3",
+                role: "Admin"
             }
         ],
     },
@@ -20,11 +21,33 @@ let initBoards:Board[] = [
         members: [
             {
                 name: "Manuel",
-                avatar_url: "https://i.pravatar.cc/150?img=2"
+                avatar_url: "https://i.pravatar.cc/150?img=2",
+                role: "Admin"
             },
             {
                 name: "Daniel",
-                avatar_url: "https://i.pravatar.cc/150?img=6"
+                avatar_url: "https://i.pravatar.cc/150?img=6",
+                role: "User"
+            },
+            {
+                name: "Manuel",
+                avatar_url: "https://i.pravatar.cc/150?img=2",
+                role: "Admin"
+            },
+            {
+                name: "Daniel",
+                avatar_url: "https://i.pravatar.cc/150?img=6",
+                role: "User"
+            },
+            {
+                name: "Manuel",
+                avatar_url: "https://i.pravatar.cc/150?img=2",
+                role: "Admin"
+            },
+            {
+                name: "Daniel",
+                avatar_url: "https://i.pravatar.cc/150?img=6",
+                role: "User"
             },
         ]
     },
@@ -35,7 +58,8 @@ let initBoards:Board[] = [
         members: [
             {
                 name: "Yeric",
-                avatar_url: "https://i.pravatar.cc/150?img=3"
+                avatar_url: "https://i.pravatar.cc/150?img=3",
+                role: "Admin"
             }
         ]
     },
@@ -46,85 +70,20 @@ let initBoards:Board[] = [
         members: [
             {
                 name: "Manuel",
-                avatar_url: "https://i.pravatar.cc/150?img=2"
-            },
-            {
-                name: "Daniel",
-                avatar_url: "https://i.pravatar.cc/150?img=6"
-            },
-            {
-                name: "Manuel",
-                avatar_url: "https://i.pravatar.cc/150?img=2"
-            },
-            {
-                name: "Daniel",
-                avatar_url: "https://i.pravatar.cc/150?img=6"
-            },
-            {
-                name: "Manuel",
-                avatar_url: "https://i.pravatar.cc/150?img=2"
-            },
-            {
-                name: "Daniel",
-                avatar_url: "https://i.pravatar.cc/150?img=6"
+                avatar_url: "https://i.pravatar.cc/150?img=2",
+                role: "Admin"
             },
         ]
     },
-    {
-        id:"5",
-        name: "Devchallenges Board",
-        image: "https://picsum.photos/seed/picsum/200/300",
-        members: [
-            {
-                name: "Yeric",
-                avatar_url: "https://i.pravatar.cc/150?img=3"
-            }
-        ]
-    },
-    {
-        id:"6",
-        name: "Simple Project",
-        image: "https://picsum.photos/seed/picsum/200/300",
-        members: [
-            {
-                name: "Manuel",
-                avatar_url: "https://i.pravatar.cc/150?img=2"
-            },
-            {
-                name: "Daniel",
-                avatar_url: "https://i.pravatar.cc/150?img=6"
-            },
-            {
-                name: "Manuel",
-                avatar_url: "https://i.pravatar.cc/150?img=2"
-            },
-            {
-                name: "Daniel",
-                avatar_url: "https://i.pravatar.cc/150?img=6"
-            },
-            {
-                name: "Manuel",
-                avatar_url: "https://i.pravatar.cc/150?img=2"
-            },
-            {
-                name: "Daniel",
-                avatar_url: "https://i.pravatar.cc/150?img=6"
-            },
-            {
-                name: "Manuel",
-                avatar_url: "https://i.pravatar.cc/150?img=2"
-            },
-            {
-                name: "Daniel",
-                avatar_url: "https://i.pravatar.cc/150?img=6"
-            },
-        ]
-    },
+    
 ]
 
 export const boards = writable(initBoards)
 
-
+/**
+ * Return a board passing its id
+ * @param boardId id of board
+ */
 export const getBoardById = function(boardId:string):Board|undefined {
     let board:Board|undefined = undefined
     boards.update(value => {

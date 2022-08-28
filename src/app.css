@@ -20,7 +20,8 @@
 body{
 	font-size: 16px;
 	font-family: 'Poppins', 'Noto Sans', sans-serif;
-	background-color: #F8F9FD;
+	background-color: #ffffff;
+	min-height: 100vh;
 }
 
 a{
@@ -91,4 +92,33 @@ box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
 .icon.light path{
 	fill: #ffffff;
+}
+
+.ft-noto {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.ft-xl {
+	font-size: 1.5rem;
+}
+.ft-lg {
+	font-size:  1.25rem;
+}
+.ft-md {
+	font-size:  1rem;
+}
+.ft-sm {
+	font-size: .75rem;
+}
+.ft-xs {
+	font-size: .5rem;
+}
+.ft-400{
+	font-weight: 400;
+}
+.ft-500{
+	font-weight: 500;
+}
+.ft-600{
+	font-weight: 500;
 }
